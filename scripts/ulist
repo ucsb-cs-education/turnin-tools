@@ -1,0 +1,18 @@
+#!/bin/sh
+# Lists files turned in (without subsequent turnins by same student)
+# mikec, 9/26/09
+
+if [ $# -eq 1 ]
+then
+  now=`date`
+  temp="/tmp/ulist.cmc"
+  ls -ltr $1 | grep -v '\-[0-9].tar.Z' | egrep -v 'LIMITS|README|LOGFILE|LOCK' > $temp
+  cat $temp
+  lines=`cat $temp | wc -l`
+  rm $temp
+  u=`expr $lines - 1`
+  echo "  $u (unique) users have turned in $1"
+  echo "  as of $now"
+else
+  echo "usage: ulist dir    (where dir is directory name)"
+fi

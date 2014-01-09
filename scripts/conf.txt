@@ -1,0 +1,14 @@
+#
+# Configuration file for grade_labs.py script
+# This conf file follows the properties file as in JAVA
+# property = value
+# class.home=/cs/class/cs16/
+# turnin.dir=TURNIN
+# turnin.fext=.tgz
+# work.dir=nil
+class.home=/cs/class/cs8
+turnin.dir=TURNIN
+turnin.fext=.tar.Z
+work.dir=nil
+work.dir.postfix=Work
+logger.debug=0
